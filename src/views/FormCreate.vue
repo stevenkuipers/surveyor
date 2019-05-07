@@ -45,7 +45,7 @@ export default {
   grid-area: preview;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   .create {
     height: 100%;
     display: grid;
@@ -59,6 +59,6 @@ export default {
   .preview {
     display: none;
   }
-}
+} */
 
 </style>

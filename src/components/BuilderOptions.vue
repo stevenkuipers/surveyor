@@ -2,16 +2,16 @@
   <div class="outline">
     <ul>
       <li class="tooltip">
-        <i class="icon fas fa-4x fa-edit"></i>
-        <span class="tooltiptext">Tooltip</span>
+        <i class="icon fas fa-2x fa-edit"></i>
+        <span class="tooltiptext">Edit</span>
       </li>
       <li class="tooltip">
-        <i class="icon fas fa-4x fa-ruler-vertical"></i>
-        <span class="tooltiptext">Tooltip</span>
+        <i class="icon fas fa-2x fa-ruler-vertical"></i>
+        <span class="tooltiptext">Styles</span>
       </li>
       <li class="tooltip">
-        <i class="icon fas fa-4x fa-cog"></i>
-        <span class="tooltiptext">Tooltip</span>
+        <i class="icon fas fa-2x fa-cog"></i>
+        <span class="tooltiptext">Settings</span>
       </li>
     </ul>
   </div>
@@ -66,7 +66,7 @@ li:not(:last-child) {
   position: absolute;
   z-index: 1;
   top: 50%;
-  right: 0%;
+  right: 25%;
   transform: translate(100%, -50%);
 }
 
