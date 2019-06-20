@@ -22,6 +22,9 @@ export default new Router({
       name: "createWithId",
       component: FormCreate,
       props: true
+//      beforeEnter: (to, from, next) => {
+      // ...add guard to check if provided id exists
+//      }
     }
   ]
 });

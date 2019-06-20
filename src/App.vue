@@ -1,36 +1,25 @@
 <template>
   <div id="app">
-    <router-view />
+    <v-app>
+  <v-toolbar app> 
+    <v-btn flat to="/">Workstation</v-btn>
+    </v-toolbar>
+  <v-content>
+    <v-container fluid>
+      <h1>Slot of container</h1>
+      <router-view></router-view>
+    </v-container>
+  </v-content>
+  <v-footer app>
+    <h1>Slot of Footer</h1>
+  </v-footer>
+</v-app>
   </div>
 </template>
 
-<style lang="scss">
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  box-sizing: inherit;
-}
-
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100vh;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<style>
+  #app {
+    font-size: 18px;
+    font-family:  Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-}
 </style>
