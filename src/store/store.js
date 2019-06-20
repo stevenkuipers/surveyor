@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// https://stackoverflow.com/questions/40564071/how-do-i-break-up-my-vuex-file
+//  Break up getters, mutations and actions into seperate components
 //  All data currently in state is dummy data for testing only
 //  import portfolio from server
 //  import styles from server
@@ -12,18 +12,18 @@ export default new Vuex.Store({
   state: {
     portfolio: [
       {
-        id: 1,
+        id: "25346746-dbc2-f627-f7a1-81ee0afd22a5",
         name: "First Questionaire",
         theme: 10001,
         content: [
           {
-            id: 9001,
+            id: 9002,
             value: "Hello Stranger"
           }
         ]
       },
       {
-        id: 2,
+        id: "f9916984-641e-70a8-2456-c488c4db171d",
         name: "Second Questionaire",
         theme: 10001,
         content: [
@@ -62,18 +62,38 @@ export default new Vuex.Store({
       return portfolioId =>
         state.portfolio.find(item => portfolioId == item.id);
     },
-    getFormComponentById(state) {
-      return componentById =>
-        state.formComponents.filter(item => componentById == item.id);
-    }
+    getformComponentById(state) {
+      return formComponentId =>
+        state.formComponents.find(item => formComponentId == item.id);
+    },
   },
   mutations: {
     addToFormById(state, { portfolioId, formComponentsId }) {
+      // console.log(portfolioId, formComponentsId)
       const portfolioItem = this.state.portfolio.find(
         item => portfolioId == item.id
       );
       portfolioItem.content.push({ id: formComponentsId });
+    },
+    addItemToPortfolio(state, payload) {
+      // add to portfolio
+      state.portfolio.push(payload);
     }
   },
-  actions: {}
+  actions: {
+    createNewPortfolioItem({ commit }) {
+      const guidGenerator = () => {
+        const S4 = () => (((1+Math.random())*0x10000)|0).toString(16).substring(1)
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4())
+      };
+      // commit new portfolio item to store
+      let item = {
+        id: guidGenerator(),
+        name: "Default Name",
+        theme: 10001,
+        content: []
+      };
+      commit("addItemToPortfolio", item);
+    }
+  }
 });
